@@ -1,0 +1,56 @@
+;JESUS ZEVALLOS J.
+;ESCRIBIR UN PROGRAMA QUE OBTENGA 02 NÚMEROS NATURALES Y REALICE LAS 
+;SIGUIENTES OPERACIONES MATEMÁTICAS: SUMA, RESTA, MULTIPLICACIÓN Y
+;DIVISIÓN. SE DEBE MOSTRAR CADA UNO DE LOS RESULTADOS OBTENIDOS.
+;PROGRAMA PARA LOS NUMEROS A=8 Y B=1.
+
+mov c,4
+mov d,232
+
+repite:
+	mov a,8
+	mov b,1
+	cmp c,4
+	jbe suma
+	cmp c,3
+	jbe resta
+	cmp c,2
+	jbe multiplicacion
+	cmp c,1
+	jbe division
+
+suma:
+	cmp c,3
+	jbe resta
+	add a,b
+	jmp imprimir
+
+resta:
+	cmp c,2
+	jbe multiplicacion
+	sub a,b
+	jmp imprimir
+
+multiplicacion:
+	cmp c,1
+	jbe division
+	mul b
+	jmp imprimir
+
+division:
+	div b
+	jmp imprimir
+
+imprimir:
+	add a,48
+	mov [d],a
+	inc d
+	cmp c,1
+	jbe exit
+	mov [d],45
+	inc d
+	dec c
+	jmp .loop
+
+exit:
+	hlt
