@@ -1,7 +1,7 @@
 # assembler-8-bit-nasm
 # LICENSE
 Eres libre de usar este codigo las veces que quieras
-#----------
+
 MIT License
 
 Copyright 2019 Jesus Zevallos J.
