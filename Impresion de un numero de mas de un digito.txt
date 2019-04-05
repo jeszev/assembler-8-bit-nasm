@@ -1,0 +1,31 @@
+;JESUS ZEVALLOS JACOBO
+;IMPRESION DE NUMERO DE MAS DE UN DIGITO
+;ALGORITMO PARA UN VALOR DE 3 CIFRAS ENTRE LOS VALORES [100-199]
+
+mov a,100	;Dividendo, SOLO CAMBIAR ESTA VARIABLE PARA OTRO VALOR
+mov b,100	;Divisor
+mov c,a		;Auxiliar C
+mov d,232 	;Pone el puntero en el output
+
+
+sub c,b		;Resta 138-100 -> a=138, b=100, c=38
+div b		;Divide 138/100 -> a=1, b=100, c=38
+add a,48	;Convierte a ascii el valor de a
+mov [d],a	;Imprime a en output
+inc d		;Incrementamos el puntero d en una casilla
+
+sub b,90	;Resta 100-90 -> a=1, b=10, c=38
+mov a,c		;Movemos c A a -> a=38, b=10, c=38
+div b		;Divide 38/10 -> a=3, b=10, c=38
+add a,48	;Convierte a ascii el valor de a
+mov [d],a	;Imprime a en output
+inc d		;Incrementamos el puntero d en una casilla
+
+sub a,48	;Resta 48 A a -> a=3, b=10, c=38 - NORMALIZAMOS a
+mul b		;Multiplica b A a -> a=30, b=10, c=38
+sub c,a		;Resta 38-30 -> a=30, b=10, c=8;
+mov a,c		;Movemos c A a -> a=8, b=10, c=8;
+add a,48	;Convierte a ascii el valor de a
+mov [d],a	;Imprime a en output
+
+hlt
